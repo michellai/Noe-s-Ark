@@ -80,6 +80,7 @@ test:
 #
 production:
   <<: *default
-  database: noesark_production
-  username: noesark
-  password: <%= ENV['NOESARK_DATABASE_PASSWORD'] %>
+   url: <%= ENV['DATABASE_URL'] %>
+#  database: 
+#  username: 
+#  password: <%= ENV['NOESARK_DATABASE_PASSWORD'] %>
