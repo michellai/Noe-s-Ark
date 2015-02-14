@@ -27,6 +27,12 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # resolve heroku deployment warnings
 gem 'rails_12factor'
 gem 'puma'
+# authentication handling
+gem 'therubyracer'
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-digitalocean'
+gem 'omniauth-facebook'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
