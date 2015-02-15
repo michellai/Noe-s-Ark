@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :sightings
+
   devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
   resources :creatures
 

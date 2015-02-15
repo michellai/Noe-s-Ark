@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  creatures_list: 
+  timestamp: 2015-02-14 22:50:05
+  location: MyString
+  fieldnotes: MyString
+
+two:
+  creatures_list: 
+  timestamp: 2015-02-14 22:50:05
+  location: MyString
+  fieldnotes: MyString

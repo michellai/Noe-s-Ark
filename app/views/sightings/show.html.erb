@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Creatures list:</strong>
+  <%= @sighting.creatures_list %>
+</p>
+
+<p>
+  <strong>Timestamp:</strong>
+  <%= @sighting.timestamp %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @sighting.location %>
+</p>
+
+<p>
+  <strong>Fieldnotes:</strong>
+  <%= @sighting.fieldnotes %>
+</p>
+
+<%= link_to 'Edit', edit_sighting_path(@sighting) %> |
+<%= link_to 'Back', sightings_path %>
