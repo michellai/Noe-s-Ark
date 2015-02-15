@@ -4,11 +4,13 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
   resources :creatures
 
+  resources :photos, only: [:new, :create, :index]
+  root to: 'photos#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'creatures#index'
+  #root 'creatures#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

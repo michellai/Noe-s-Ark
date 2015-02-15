@@ -33,6 +33,14 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-digitalocean'
 gem 'omniauth-facebook'
+
+# dragonfly photo uploader
+gem 'dragonfly'
+gem 'dragonfly-s3_data_store'
+gem 'bootstrap-sass'
+group :production do
+  gem 'rack-cache', :require => 'rack/cache'
+end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
