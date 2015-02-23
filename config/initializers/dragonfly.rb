@@ -1,4 +1,5 @@
 require 'dragonfly'
+require 'dragonfly/s3_data_store'
 
 # Configure
 Dragonfly.app.configure do
@@ -8,9 +9,15 @@ Dragonfly.app.configure do
 
   url_format "/media/:job/:name"
 
-  datastore :file,
-    root_path: Rails.root.join('public/system/dragonfly', Rails.env),
-    server_root: Rails.root.join('public')
+  #datastore :file,
+  #  root_path: Rails.root.join('public/system/dragonfly', Rails.env),
+  #  server_root: Rails.root.join('public')
+  datastore :s3,
+    bucket_name: 'noes-ark',
+    access_key_id: ENV['AWS_ACCESS_KEY'],
+    secret_access_key: ENV['AWS_SECRET_KEY'],
+    region: 'us-west-1',
+    url_host: 'noes-ark.s3-us-west-1.amazonaws.com'
 end
 
 # Logger
