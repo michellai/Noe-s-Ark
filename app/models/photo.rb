@@ -1,5 +1,11 @@
 class Photo < ActiveRecord::Base
-    dragonfly_accessor :image
+    belongs_to :imageable, :polymorphic => true
+
+    dragonfly_accessor :image do
+        after_assign do |img|
+            img.encode!('jpg', '-quality 80') if img.image?
+        end
+    end
     validates :title, presence: true, length: {minimum: 2, maximum: 20}
     validates :image, presence: true
  

@@ -7,6 +7,7 @@
 # Ignore bundler config.
 /.bundle
 public/system/dragonfly/development/*
+*DS_STORE
 
 # Ignore all logfiles and tempfiles.
 /log/*

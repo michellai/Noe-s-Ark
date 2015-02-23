@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150215073420) do
+ActiveRecord::Schema.define(version: 20150223030607) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,13 +23,18 @@ ActiveRecord::Schema.define(version: 20150215073420) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.binary   "photos",                       array: true
+    t.integer  "sighting_id"
   end
+
+  add_index "creatures", ["sighting_id"], name: "index_creatures_on_sighting_id", using: :btree
 
   create_table "photos", force: :cascade do |t|
     t.string   "image_uid"
     t.string   "title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "imageable_id"
+    t.string   "imageable_type"
   end
 
   create_table "sightings", force: :cascade do |t|
@@ -39,7 +44,11 @@ ActiveRecord::Schema.define(version: 20150215073420) do
     t.string   "fieldnotes"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.integer  "creatures_id"
+    t.integer  "user_id"
   end
+
+  add_index "sightings", ["user_id"], name: "index_sightings_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

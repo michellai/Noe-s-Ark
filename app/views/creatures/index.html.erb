@@ -13,19 +13,21 @@
     </tr>
   </thead>
 
-  <tbody>
-    <% @creatures.each do |creature| %>
-      <tr>
-        <td><%= creature.common_name %></td>
-        <td><%= creature.scientific_name %></td>
-        <td><%= creature.photos %></td>
-        <td><%= creature.notes %></td>
-        <td><%= link_to 'Show', creature %></td>
-        <td><%= link_to 'Edit', edit_creature_path(creature) %></td>
-        <td><%= link_to 'Destroy', creature, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
+  <div>
+    <tbody>
+        <% @creatures.each do |creature| %>
+          <tr>
+            <td><%= creature.common_name %></td>
+            <td><%= creature.scientific_name %></td>
+            <td><%= creature.photos %></td>
+            <td><%= creature.notes %></td>
+            <td><%= link_to 'Show', creature %></td>
+            <td><%= link_to 'Edit', edit_creature_path(creature) %></td>
+            <td><%= link_to 'Destroy', creature, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+    </tbody>
+  </div>
 </table>
 
 <br>
